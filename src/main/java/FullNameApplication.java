@@ -5,12 +5,19 @@ public class FullNameApplication {
         Scanner myScanner = new Scanner (System.in);
 
         String firstName = readString(myScanner, "Enter your first name:");
-        String middleName = readString(myScanner, "Enter your middle name (if none: N/A):");
+        String middleName = readString(myScanner, "Enter your middle name:");
         String lastName = readString(myScanner,"Enter your last name");
+        String suffix = readString(myScanner, "Enter your suffix");
 
-        if (middleName.equalsIgnoreCase("N/A")) {
-            System.out.println(firstName + " " + lastName);
-        } else System.out.println(firstName + " " + middleName + " " + lastName);
+        if (middleName.isEmpty() && suffix.isEmpty()) {
+            System.out.printf(firstName + " " + lastName);
+        } else if (suffix.isEmpty()) {
+            System.out.println(firstName + " " + middleName + " " + lastName);
+        } else if (middleName.isEmpty()) {
+            System.out.println(firstName + " " + lastName + ", " + suffix);
+        } else{
+            System.out.println(firstName + " " + middleName + " " + lastName + ", " + suffix);
+        }
 
     }
 
