@@ -9,11 +9,11 @@ public class FullNameApplication {
         String lastName = readString(myScanner,"Enter your last name");
         String suffix = readString(myScanner, "Enter your suffix");
 
-        if (middleName.isEmpty() && suffix.isEmpty()) {
+        if (middleName.isBlank() && suffix.isEmpty()) {
             System.out.printf(firstName + " " + lastName);
-        } else if (suffix.isEmpty()) {
+        } else if (suffix.isBlank()) {
             System.out.println(firstName + " " + middleName + " " + lastName);
-        } else if (middleName.isEmpty()) {
+        } else if (middleName.isBlank()) {
             System.out.println(firstName + " " + lastName + ", " + suffix);
         } else{
             System.out.println(firstName + " " + middleName + " " + lastName + ", " + suffix);
